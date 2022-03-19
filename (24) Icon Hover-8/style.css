@@ -1,0 +1,146 @@
+@font-face {
+  font-family: "ecoicon";
+  src: url("./ecoicons/ecoicon.woff") format("woff"),
+    url("./ecoicons/ecoicon.svg#ecoicon") format("svg");
+}
+
+body {
+  background-color: #702fa8;
+}
+
+.wrap {
+  text-align: center;
+  margin: 0 auto;
+  padding: 2em 0 3em;
+}
+
+.icon {
+  display: inline-block;
+  font-size: 0px;
+  cursor: pointer;
+  margin: 15px 30px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.icon::before {
+  font-family: "ecoicon";
+  font-size: 48px;
+  line-height: 90px;
+  display: block;
+}
+
+.icon-a::before {
+  content: "\e00c";
+}
+
+.icon-b::before {
+  content: "\e00d";
+}
+
+.icon-c::before {
+  content: "\e00e";
+}
+
+.icon-d::before {
+  content: "\e00f";
+}
+
+.icon::after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: "";
+  box-sizing: content-box;
+}
+
+.effect-8 .icon {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 1);
+  overflow: hidden;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.effect-8 .icon::after {
+  display: none;
+}
+
+.effect-8 .icon:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #702fa8;
+  box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.effect-8a .icon:hover::before {
+  animation: LtoR 0.3s forwards;
+}
+
+@keyframes LtoR {
+  49% {
+    transform: translate(100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translate(-100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+
+.effect-8b .icon:hover::before {
+  animation: RtoL 0.3s forwards;
+}
+
+@keyframes RtoL {
+  49% {
+    transform: translate(-100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translate(100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+
+.effect-8c .icon:hover::before {
+  animation: BtoT 0.3s forwards;
+}
+
+@keyframes BtoT {
+  49% {
+    transform: translateY(-100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}
+
+.effect-8d .icon:hover::before {
+  animation: TtoB 0.3s forwards;
+}
+
+@keyframes TtoB {
+  49% {
+    transform: translateY(100%);
+  }
+  50% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  51% {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "ecoicon";
+  src: url("./ecoicons/ecoicon.woff") format("woff"),
+    url("./ecoicons/ecoicon.svg#ecoicon") format("svg");
+}
+
+body {
+  background-color: #3851bc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.wrap {
+  text-align: center;
+  margin: 0 auto;
+  padding: 2em 0 3em;
+}
+
+.icon {
+  display: inline-block;
+  font-size: 0px;
+  cursor: pointer;
+  margin: 15px 30px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.icon::before {
+  font-family: "ecoicon";
+  font-size: 48px;
+  line-height: 90px;
+  display: block;
+  content: "\e005";
+}
+
+.icon::after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: "";
+  box-sizing: content-box;
+}
+
+.effect-7 .icon {
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform ease-out 0.1s, background 0.2s;
+}
+
+.effect-7 .icon::after {
+  top: 0;
+  left: 0;
+  padding: 0;
+  z-index: -1;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.effect-7 .icon:hover::after {
+  animation: sonar 1.3s ease-out 75ms;
+}
+
+@keyframes sonar {
+  0% {
+    opacity: 0.3;
+  }
+  40% {
+    opacity: 0.5;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc,
+      0 0 0 10px rgba(255, 255, 255, 0.5);
+  }
+  100% {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1), 0 0 10px 10px #3851bc,
+      0 0 0 10px rgba(255, 255, 255, 0.5);
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

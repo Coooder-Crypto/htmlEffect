@@ -1,0 +1,119 @@
+@font-face {
+  font-family: "ecoicon";
+  src: url("./ecoicons/ecoicon.woff") format("woff"),
+    url("./ecoicons/ecoicon.svg#ecoicon") format("svg");
+}
+
+body {
+  background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.wrap {
+  text-align: center;
+  margin: 0 auto;
+  padding: 2em 0 3em;
+}
+
+.icon {
+  display: inline-block;
+  font-size: 0px;
+  cursor: pointer;
+  margin: 15px 30px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.icon::before {
+  font-family: "ecoicon";
+  font-size: 48px;
+  line-height: 90px;
+  display: block;
+}
+
+.icon-a::before {
+  content: "\e005";
+}
+
+.icon-b::before {
+  content: "\e006";
+}
+
+.icon::after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: "";
+  box-sizing: content-box;
+}
+
+.effect-6 .icon {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 1);
+  transition: background 0.2s, color 0.2s;
+}
+
+.effect-6 .icon:hover {
+  color: #fff;
+}
+
+.effect-6 .icon::after {
+  top: -8px;
+  left: -8px;
+  padding: 8px;
+  z-index: -1;
+  opacity: 0;
+}
+
+.effect-6a .icon::after {
+  box-shadow: 0 0 0 rgba(255, 255, 255, 1);
+  transition: opacity 0.2s, box-shadow 0.2s;
+}
+
+.effect-6a .icon:hover::after {
+  opacity: 1;
+  box-shadow: 3px 3px 0 rgba(255, 255, 255, 1);
+}
+
+.effect-6a .icon::before {
+  transform: scale(0.8);
+  opacity: 0.7;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.effect-6a .icon:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.effect-6b .icon::after {
+  box-shadow: 3px 3px rgba(255, 255, 255, 1);
+  transform: rotate(-90deg);
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.effect-6b .icon:hover::after {
+  opacity: 1;
+  transform: rotate(0deg);
+}
+
+.effect-6b .icon::before {
+  transform: scale(0.8);
+  opacity: 0.7;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.effect-6b .icon:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}

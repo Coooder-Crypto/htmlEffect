@@ -1,0 +1,76 @@
+@font-face {
+  font-family: "ecoicon";
+  src: url("./ecoicons/ecoicon.woff") format("woff"),
+    url("./ecoicons/ecoicon.svg#ecoicon") format("svg");
+}
+
+body {
+  background-color: #64bb5d;
+  display: flex;
+}
+
+.wrap {
+  text-align: center;
+  margin: 0 auto;
+  padding: 2em 0 3em;
+  position: relative;
+  top: 350px;
+}
+
+.icon {
+  display: inline-block;
+  font-size: 0px;
+  cursor: pointer;
+  margin: 15px 30px;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.icon::before {
+  font-family: "ecoicon";
+  font-size: 48px;
+  line-height: 90px;
+  display: block;
+}
+
+.icon-a::before {
+  content: "\e007";
+}
+
+.icon::after {
+  pointer-events: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  content: "";
+  box-sizing: content-box;
+}
+
+.effect-5 .icon {
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 1);
+  transition: background 0.2s, color 0.2s;
+}
+
+.effect-5 .icon:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #64bb5d;
+}
+
+.effect-5 .icon:hover::before {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,61 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!--引入css-->
+    <title>Window Effect</title>
+  </head>
+  <body>
+    <!--弹窗部分-->
+    <div class="md-modal md-effect-1" id="modal-1">
+      <div class="md-content">
+        <h3>弹窗-1</h3>
+        <div>
+          <p>如果觉得有用可以点个关注哦 (✧∇✧)</p>
+          <p>如果觉得有用可以点个关注哦 (◕ˇ∀ˇ◕)</p>
+          <p>如果觉得有用可以点个关注哦 (=^▽^=)</p>
+          <p>重要的事情说三遍 (*^▽^*)</p>
+          <!--关闭按钮-->
+          <button class="md-close">关闭</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="md-modal md-effect-2" id="modal-2">
+      <div class="md-content">
+        <h3>弹窗-2</h3>
+        <div>
+          <p>如果觉得有用可以点个关注哦 (✧∇✧)</p>
+          <p>如果觉得有用可以点个关注哦 (◕ˇ∀ˇ◕)</p>
+          <p>如果觉得有用可以点个关注哦 (=^▽^=)</p>
+          <p>重要的事情说三遍 (*^▽^*)</p>
+          <!--关闭按钮-->
+          <button class="md-close">关闭</button>
+        </div>
+      </div>
+    </div>
+    <!--主页面部分-->
+    <div class="container">
+      <header>
+        <h1>弹窗效果合集</h1>
+      </header>
+      <div class="main">
+        <div class="column">
+          <div class="intro">这里会写很多种不同的弹窗样式</div>
+          <div class="intro">所有样式都是用纯CSS实现的</div>
+          <div class="intro">持续更新中，关注不迷路哦</div>
+          <div class="intro">٩(๑•̀ω•́๑)۶</div>
+        </div>
+        <!--所有的效果按钮-->
+        <div class="column">
+          <button class="md-trigger" data-modal="modal-1">1.顶部滑入</button>
+          <button class="md-trigger" data-modal="modal-2">2.渐入</button>
+        </div>
+      </div>
+    </div>
+    <div class="md-overlay"></div>
+    <script src="index.js"></script>
+  </body>
+</html>
