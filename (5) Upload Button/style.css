@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "PingFang SC", "Microsoft Yahei", sans-serif;
+  }
+  
+  /* 把按钮居中 */
+  main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #222f3e;
+    height: 100vh;
+  }
+  
+  /* 设置上传按钮样式 */
+  .upload-button {
+    /* 样式 */
+    width: 180px;
+    height: 60px;
+    background-image: linear-gradient(160deg, #0093e9, #80d0c7);
+  
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 147, 233, 0.28);
+  
+    /* 子元素对齐 */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  
+  /* 对勾，默认隐藏 */
+  .upload-button .checkmark {
+    opacity: 0;
+  }
+  
+  /* 进度条样式 */
+  .upload-button .progress-bar {
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    border-radius: 4px;
+    background-image: linear-gradient(45deg, #85ffbd, #fffb7d);
+  }
+  
+  /* 上传时，箭头中间线的动画，虚线上行 */
+  .upload-button.uploading .middle-line {
+    stroke-dasharray: 4 3;
+    animation: 0.8s linear dashLoop infinite;
+  }
+  
+  /* 上传图标圆形闪烁 */
+  .upload-button.uploading circle {
+    animation: 1.5s linear blink infinite;
+  }
+  
+  /* 上传完成后箭头上半部分动画, 画线擦除动画, 最后透明度设置为0 */
+  .upload-button.uploaded .arrow-top {
+    animation: 1s linear arrowTransform forwards;
+  }
+  
+  /* 上传完成后对勾动画，画线效果 */
+  .upload-button.uploaded .checkmark {
+    opacity: 1;
+    stroke-dasharray: 100 100;
+    stroke-dashoffset: 100;
+    animation: 1s linear checkmarkTransform forwards 0.5s;
+  }
+  
+  /* 上传完成后，隐藏箭头中间的线 */
+  .upload-button.uploaded .middle-line {
+    transition: 0.3s linear;
+    opacity: 0;
+  }
+  
+  /* 箭头中间线虚线上行动画 */
+  @keyframes dashLoop {
+    from {
+      stroke-dashoffset: 0;
+    }
+    to {
+      stroke-dashoffset: 7;
+    }
+  }
+  
+  /* 圆形闪烁动画 */
+  @keyframes blink {
+    from {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* 箭头变形动画 */
+  @keyframes arrowTransform {
+    from {
+      stroke-dasharray: 100 100;
+      stroke-dashoffset: 0;
+    }
+  
+    to {
+      stroke-dasharray: 100 100;
+      stroke-dashoffset: -100;
+    }
+  }
+  
+  /* 对勾动画 */
+  @keyframes checkmarkTransform {
+    from {
+      stroke-dasharray: 100 100;
+      stroke-dashoffset: 100;
+    }
+    to {
+      stroke-dasharray: 100 100;
+      stroke-dashoffset: 0;
+    }
+  }
+  

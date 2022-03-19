@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Bing Dwen Dwen</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="body"></div>
+      <div class="ear ear-l"></div>
+      <div class="ear ear-r"></div>
+      <div class="arm arm-l"></div>
+      <div class="arm arm-r">
+        <div class="heart">
+          <div class="heart-l"></div>
+          <div class="heart-r"></div>
+        </div>
+      </div>
+      <div class="leg leg-l"></div>
+      <div class="leg leg-r"></div>
+
+      <div class="face" onclick="say()">
+        <div class="line line1"></div>
+        <div class="line line2"></div>
+        <div class="line line3"></div>
+        <div class="line line4"></div>
+
+        <div class="eye eye-l">
+          <div class="eye-c1">
+            <div class="eye-c2">
+              <div class="eye-c3"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="eye eye-r">
+          <div class="eye-c1">
+            <div class="eye-c2">
+              <div class="eye-c3"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="nose">
+          <div class="nose-c"></div>
+        </div>
+
+        <div class="mouth"></div>
+        <div class="mouth-c"></div>
+      </div>
+      <div class="symbol">
+        <img src="./1.jpg" height="150px" width="150px" />
+      </div>
+      <div class="dialog">
+        <div class="dialog-c1">
+          <div class="said-box"></div>
+        </div>
+        <div class="dialog-c2"></div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var tosay = [
+        ["hello", "这是第一行"],
+        ["做完了", "这是第二行"],
+        ["不要取关呀", "这是第三行"],
+      ];
+      var length = 2; //需要循环的对话组数
+      var index = 0;
+      var said = document.querySelector(".said-box");
+      for (var i = 0; i < 3; i++) {
+        var said_line = document.createElement("div");
+        said_line.setAttribute("class", "said");
+        said_line.textContent = tosay[i][0];
+        said.appendChild(said_line);
+      }
+      function say() {
+        if (index == length) index = 0;
+        var all_line = document.querySelectorAll(".said");
+        for (var i = 0; i < 3; i++) {
+          all_line[i].textContent = tosay[i][index];
+        }
+        index++;
+      }
+    </script>
+  </body>
+</html>
