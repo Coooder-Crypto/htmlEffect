@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Hidden Search</title>
+  </head>
+  <body>
+    <div class="search">
+      <input type="text" class="input" placeholder="Type Here To Search" />
+      <button class="btn">
+        <img class="fas fa-search" src="search.png" />
+      </button>
+    </div>
+    <script>
+      const search = document.querySelector(".search");
+      const btn = document.querySelector(".btn");
+      const input = document.querySelector(".input");
+
+      btn.addEventListener("click", () => {
+        search.classList.toggle("active");
+        input.focus();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Mimicry Ui</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="tab-container">
+        <div class="tabs">
+          <div id="tab1" class="tab active">选项一</div>
+          <div id="tab2" class="tab">选项二</div>
+          <div id="tab3" class="tab">选项三</div>
+        </div>
+        <div class="tab-content">
+          <div data-tab="tab1" style="display: block">
+            <h2>选项一内容</h2>
+            <h1>一键三连</h1>
+          </div>
+          <div data-tab="tab2" style="display: block">
+            <h2>选项二内容</h2>
+            <h1>一键三连</h1>
+          </div>
+          <div data-tab="tab3" style="display: block">
+            <h2>选项三内容</h2>
+            <h1>一键三连</h1>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      const tabContainer = document.querySelector(".tabs");
+      const tabs = document.querySelectorAll(".tab");
+
+      tabContainer.addEventListener("click", ({ target: currentTab }) => {
+        tabs.forEach((tab) => {
+          tab.classList.remove("active");
+        });
+
+        currentTab.classList.add("active");
+        changeTab(currentTab.id);
+      });
+
+      const tabContents = document.querySelectorAll(".tab-content>*");
+
+      const changeTab = (tabid) => {
+        const newTab = document.querySelector(`div[data-tab=${tabid}]`);
+        tabContents.forEach((content) => {
+          content.style.display = "none";
+        });
+        newTab.style.display = "block";
+      };
+    </script>
+  </body>
+</html>
