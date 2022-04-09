@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/font_3311026_vcd5lwzdp8.css"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="img-area">
+        <img src="" alt="" />
+      </div>
+      <div class="song-details">
+        <p class="name"></p>
+        <p class="artist"></p>
+      </div>
+      <div class="progress-area">
+        <div class="progress-bar">
+          <audio id="main-audio" src=""></audio>
+        </div>
+        <div class="song-timer">
+          <span class="current-time">0:00</span>
+          <span class="max-duration">0:00</span>
+        </div>
+      </div>
+      <div class="controls">
+        <i
+          id="repeat-plist"
+          class="iconfont icon-liebiaoxunhuan"
+          title="repeat"
+        ></i>
+        <i id="prev" class="iconfont icon-shangyishou"></i>
+        <div class="play-pause">
+          <i id="start" class="iconfont icon-bofang play"></i>
+        </div>
+        <i id="next" class="iconfont icon-xiayishou"></i>
+        <i id="more-music" class="iconfont icon-yinleliebiao"></i>
+      </div>
+      <div class="music-list">
+        <div class="header">
+          <div class="row">
+            <i class="iconfont list icon-yinleliebiao"></i>
+            <span>Music list</span>
+          </div>
+          <i id="close" class="iconfont icon-guanbi"></i>
+        </div>
+        <ul></ul>
+      </div>
+    </div>
+
+    <script src="js/music-list.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>
